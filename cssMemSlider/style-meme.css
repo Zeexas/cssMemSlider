@@ -12,19 +12,20 @@ li {
 main {
   width: 100%;
   height: 100vh;
-  padding-top: 5vh;
+  padding-top: 2.5vw;
   background-color: darkslategray;
 }
 
 .slider-bg {
-  width: 80vw;
-  height: 90vh;
+  width: calc(70vw + 10rem);
+  /* height: 90vh; */
   margin: 0 auto;
+  padding-bottom: 3vw;
   /* background-color: aquamarine; */
 }
 
 .slider {
-  max-width: 1280px;
+  max-width: 80rem;
   height: 100%;
   margin: 0 auto;
   overflow: hidden;
@@ -33,21 +34,19 @@ main {
   "screen screen"
   "text bullets";
   grid-template-columns: 1fr 1fr;
-  /* grid-template-rows: 1fr 1fr; */
-  /* background-color: bisque; */
-  
 }
 
 .screen {
   grid-area: screen;
-  max-width: 1280px;
-  max-height: 720px;
-  margin: 0 auto 2rem;
-  border-radius: 1rem;
+  max-width: 80rem;
+  max-height: 45rem;
+  margin: 0 auto 1vw;
+  border-radius: 1vw;
   overflow: hidden;
 }
 
 .slides-ribbon {
+  /* max-height: 720px; */
   display: flex;
   flex-flow: row nowrap;
   transition: transform .7s ease-in-out;
@@ -61,6 +60,7 @@ main {
 }
 
 .bullets {
+  height: fit-content;
   grid-area: bullets;
   display: flex;
   flex-flow: row nowrap;
@@ -72,8 +72,9 @@ main {
   display: block;
   padding: .5rem;
   cursor: pointer;
+  transition: .2s;
+  /* background-color: lightgoldenrodyellow; */
 }
-
 
 .text {
   grid-area: text;
@@ -88,7 +89,7 @@ main {
 .text-box {
   display: flex;
   width: 200%;
-  transition: transform .9s ease-in-out;
+  transition: transform .8s ease-in-out;
   scroll-behavior: smooth;
 }
 
@@ -104,19 +105,17 @@ main {
   height: 1vw;
   border-radius: 50%;
   border: 2px solid lightskyblue;
-}
-
-.bullet:hover {
-  background-color: #fff;
-}
-
-.slider > s:target ~ .bullets > * > .bullet {
+  transition: .2s;
   background: lightskyblue;
 }
 
 .slider > s:target ~ .bullets > *:hover .bullet {
   background: #fff;
   border-color: #fff;
+}
+
+.slider > s:target ~ .bullets > *:active .bullet {
+  transform: scale(1.2) translateY(0%);
 }
 
 #s1:target ~ .bullets > *:nth-child(1) > .bullet {
