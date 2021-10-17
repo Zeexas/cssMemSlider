@@ -12,12 +12,12 @@ li {
 main {
   width: 100%;
   height: 100vh;
-  padding-top: 2.5vw;
+  padding-top: calc(1vw + 2rem);
   background-color: darkslategray;
 }
 
 .slider-bg {
-  width: calc(70vw + 10rem);
+  width: calc(75vw + 5rem);
   /* height: 90vh; */
   margin: 0 auto;
   padding-bottom: 3vw;
@@ -31,8 +31,8 @@ main {
   overflow: hidden;
   display: grid;
   grid-template-areas: 
-  "screen screen"
-  "text bullets";
+    "screen screen"
+    "text bullets";
   grid-template-columns: 1fr 1fr;
 }
 
@@ -40,7 +40,7 @@ main {
   grid-area: screen;
   max-width: 80rem;
   max-height: 45rem;
-  margin: 0 auto 2vw;
+  margin: 0 auto calc(1vw + 1rem);
   border-radius: 1vw;
   overflow: hidden;
 }
@@ -120,21 +120,11 @@ main {
   transform: scale(1.2) translateY(0%);
 }
 
-#s1:target ~ .bullets > *:nth-child(1) > .bullet {
-  background-color: inherit;
-}
+#s1:target ~ .bullets > *:nth-child(1) > .bullet {background-color: inherit;}
+#s2:target ~ .bullets > *:nth-child(2) > .bullet {background-color: inherit;}
+#s3:target ~ .bullets > *:nth-child(3) > .bullet {background-color: inherit;}
+#s4:target ~ .bullets > *:nth-child(4) > .bullet {background-color: inherit;}
 
-#s2:target ~ .bullets > *:nth-child(2) > .bullet {
-  background-color: inherit;
-}
-
-#s3:target ~ .bullets > *:nth-child(3) > .bullet {
-  background-color: inherit;
-}
-
-#s4:target ~ .bullets > *:nth-child(4) > .bullet {
-  background-color: inherit;
-}
 /*  Slide Pictures  */
 #s1:target ~ .screen .slides-ribbon {transform: translateX(0%);}
 #s2:target ~ .screen .slides-ribbon {transform: translateX(-100%);}
@@ -167,6 +157,42 @@ main {
 #s4:target ~ .text .line-2 {opacity: 0;}
 #s4:target ~ .text .line-3 {opacity: 0;}
 #s4:target ~ .text .line-4 {opacity: 1;}
+
+@media (max-width: 768px) {
+  .slider-bg {
+    width: 85vw;
+    padding-bottom: 5vw;
+  }
+  
+  .slider {
+    grid-template-areas: 
+    "screen"
+    "bullets"
+    "text";
+    grid-template-columns: 1fr;
+  }
+
+  .screen {
+    margin-bottom: 4vw;
+  }
+
+  .bullets {
+    justify-content: center;
+    margin-bottom: 5vw;
+  }
+
+  .text {
+    width: 100%;
+    font-size: calc(.7vw + 1rem);
+  }
+}
+
+@media (max-width: 320px) {
+  html {
+    font-size: 0.6rem;
+  }
+}
+
 
 
 
