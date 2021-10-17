@@ -1,0 +1,162 @@
+* {
+  margin: 0;
+	padding: 0;
+	border: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+main {
+  width: 100%;
+  height: 100vh;
+  padding-top: 5vh;
+  background-color: #030303;
+}
+
+.slider-bg {
+  width: 80vw;
+  height: 90vh;
+  margin: 0 auto;
+  background-color: aquamarine;
+}
+
+.slider {
+  max-width: 1280px;
+  height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  display: grid;
+  grid-template-areas: 
+  "screen screen"
+  "text bullets";
+  grid-template-columns: 1fr 1fr;
+  /* grid-template-rows: 1fr 1fr; */
+  background-color: bisque;
+  
+}
+
+.screen {
+  grid-area: screen;
+  max-width: 1280px;
+  max-height: 720px;
+  margin: 0 auto 2rem;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.slides-ribbon {
+  display: flex;
+  flex-flow: row nowrap;
+  transition: transform .7s ease-in-out;
+  scroll-behavior: smooth;
+
+}
+
+.slide {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.bullets {
+  grid-area: bullets;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: right;
+  /* background-color: lightcoral; */
+}
+
+.bullet-area {
+  display: block;
+  padding: .5rem;
+  cursor: pointer;
+}
+
+.text {
+  grid-area: text;
+  width: 35rem;
+  overflow: hidden;
+  font-family: Cursive;
+  font-size: 1.5rem;
+  /* background-color: steelblue; */
+}
+
+.text-box {
+  display: flex;
+  width: 200%;
+  transition: transform .9s ease-in-out;
+  scroll-behavior: smooth;
+}
+
+.text-line {
+  min-width: 100%;
+  display: block;
+  transition: opacity 1s ease-in;
+  /* background-color: lightgreen; */
+}
+
+.bullet {
+  width: 1vw;
+  height: 1vw;
+  border-radius: 50%;
+  border: 2px solid lightskyblue;
+}
+
+.slider > s:target ~ .bullets > * > .bullet {
+  background: lightskyblue;
+}
+
+#s1:target ~ .bullets > *:nth-child(1) > .bullet {
+  background-color: snow;
+}
+
+#s2:target ~ .bullets > *:nth-child(2) > .bullet {
+  background-color: snow;
+}
+
+#s3:target ~ .bullets > *:nth-child(3) > .bullet {
+  background-color: snow;
+}
+
+#s4:target ~ .bullets > *:nth-child(4) > .bullet {
+  background-color: snow;
+}
+/*  Slide Pictures  */
+#s1:target ~ .screen .slides-ribbon {transform: translateX(0%);}
+#s2:target ~ .screen .slides-ribbon {transform: translateX(-100%);}
+#s3:target ~ .screen .slides-ribbon {transform: translateX(-200%);}
+#s4:target ~ .screen .slides-ribbon {transform: translateX(-300%);}
+
+/*  Slide text  */
+#s1:target ~ .text > .text-box {transform: translateX(0%);}
+#s2:target ~ .text > .text-box {transform: translateX(-100%);}
+#s3:target ~ .text > .text-box {transform: translateX(-200%);}
+#s4:target ~ .text > .text-box {transform: translateX(-300%);}
+
+/*  Make text invisible while sliding  */
+#s1:target ~ .text .line-1 {opacity: 1;}
+#s1:target ~ .text .line-2 {opacity: 0;}
+#s1:target ~ .text .line-3 {opacity: 0;}
+#s1:target ~ .text .line-4 {opacity: 0;}
+
+#s2:target ~ .text .line-1 {opacity: 0;}
+#s2:target ~ .text .line-2 {opacity: 1;}
+#s2:target ~ .text .line-3 {opacity: 0;}
+#s2:target ~ .text .line-4 {opacity: 0;}
+
+#s3:target ~ .text .line-1 {opacity: 0;}
+#s3:target ~ .text .line-2 {opacity: 0;}
+#s3:target ~ .text .line-3 {opacity: 1;}
+#s3:target ~ .text .line-4 {opacity: 0;}
+
+#s4:target ~ .text .line-1 {opacity: 0;}
+#s4:target ~ .text .line-2 {opacity: 0;}
+#s4:target ~ .text .line-3 {opacity: 0;}
+#s4:target ~ .text .line-4 {opacity: 1;}
+
+
+
+
+
