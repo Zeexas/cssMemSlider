@@ -40,7 +40,7 @@ main {
   grid-area: screen;
   max-width: 80rem;
   max-height: 45rem;
-  margin: 0 auto 1vw;
+  margin: 0 auto 2vw;
   border-radius: 1vw;
   overflow: hidden;
 }
@@ -70,7 +70,7 @@ main {
 
 .bullet-area {
   display: block;
-  padding: .5rem;
+  padding: calc(.1rem + .2vw);
   cursor: pointer;
   transition: .2s;
   /* background-color: lightgoldenrodyellow; */
@@ -78,10 +78,10 @@ main {
 
 .text {
   grid-area: text;
-  width: 35rem;
+  width: calc(20vw + 20rem);
   overflow: hidden;
   font-family: Cursive;
-  font-size: 1.5rem;
+  font-size: calc(.7vw + 1rem);
   color: #fff;
   /* background-color: steelblue; */
 }
@@ -101,8 +101,10 @@ main {
 }
 
 .bullet {
-  width: 1vw;
-  height: 1vw;
+  width: calc(.7vw + .7rem);
+  height: calc(.7vw + .7rem);
+  min-width: 1rem;
+  min-height: 1rem;
   border-radius: 50%;
   border: 2px solid lightskyblue;
   transition: .2s;
