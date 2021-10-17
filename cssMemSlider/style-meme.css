@@ -13,14 +13,14 @@ main {
   width: 100%;
   height: 100vh;
   padding-top: 5vh;
-  background-color: #030303;
+  background-color: darkslategray;
 }
 
 .slider-bg {
   width: 80vw;
   height: 90vh;
   margin: 0 auto;
-  background-color: aquamarine;
+  /* background-color: aquamarine; */
 }
 
 .slider {
@@ -34,7 +34,7 @@ main {
   "text bullets";
   grid-template-columns: 1fr 1fr;
   /* grid-template-rows: 1fr 1fr; */
-  background-color: bisque;
+  /* background-color: bisque; */
   
 }
 
@@ -74,12 +74,14 @@ main {
   cursor: pointer;
 }
 
+
 .text {
   grid-area: text;
   width: 35rem;
   overflow: hidden;
   font-family: Cursive;
   font-size: 1.5rem;
+  color: #fff;
   /* background-color: steelblue; */
 }
 
@@ -104,24 +106,33 @@ main {
   border: 2px solid lightskyblue;
 }
 
+.bullet:hover {
+  background-color: #fff;
+}
+
 .slider > s:target ~ .bullets > * > .bullet {
   background: lightskyblue;
 }
 
+.slider > s:target ~ .bullets > *:hover .bullet {
+  background: #fff;
+  border-color: #fff;
+}
+
 #s1:target ~ .bullets > *:nth-child(1) > .bullet {
-  background-color: snow;
+  background-color: inherit;
 }
 
 #s2:target ~ .bullets > *:nth-child(2) > .bullet {
-  background-color: snow;
+  background-color: inherit;
 }
 
 #s3:target ~ .bullets > *:nth-child(3) > .bullet {
-  background-color: snow;
+  background-color: inherit;
 }
 
 #s4:target ~ .bullets > *:nth-child(4) > .bullet {
-  background-color: snow;
+  background-color: inherit;
 }
 /*  Slide Pictures  */
 #s1:target ~ .screen .slides-ribbon {transform: translateX(0%);}
