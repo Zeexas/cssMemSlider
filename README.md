@@ -1,1 +1,1 @@
-# cssMemSlider
+https://zeexas.github.io/cssMemSlider/cssMemSlider/index.html
